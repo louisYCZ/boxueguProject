@@ -31,31 +31,9 @@
     </div>
 
     <?php include "/views/public/js.html"?>
+
 <script>
-    $(function () {
-        $("form").submit(function () {
-            $.ajax({
-                url:"/api/login",
-                type:'post',
-                data:$(this).serialize(),
-                success:function (data) {
-                    if(data.code==200){
-
-                        //把请求的数据用cookie保存起来实现跨界面调用
-//                        var userInfo= document.cookie=data.result.tc_avatar;
-////                    document.cookie=data.result.tc_name;
-//                        console.log(userInfo);
-                        $.cookie('userInfo',JSON.stringify(data.result), {path: "/"})
-                        location.href='/';
-                    }
-
-                }
-            });
-            return false;
-        })
-    });
-
-
+   require(['../static/js/dashboard/login']);
 </script>
 </body>
 </html>
