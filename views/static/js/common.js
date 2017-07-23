@@ -1,7 +1,6 @@
 
 define(['jquery','template','cookie'],function ($,template) {
   $(function () {
-
     //判断用户当前在哪个页面
     //如果不在登录页面才执行下面的这段代码
     if(location.pathname!='/dashboard/login'){
@@ -17,6 +16,18 @@ define(['jquery','template','cookie'],function ($,template) {
 
     }
 
+ //退出按钮 点击之后发挥登录页面
+    $('.nav').on('click','#quit',function () {
+      $.ajax({
+        url:'/api/logout',
+        type:'post',
+        success:function (data) {
+          if(data.code==200){
+            location.href='/dashboard/login';
+          }
+        }
+      })
+    })
   })
 });
 
