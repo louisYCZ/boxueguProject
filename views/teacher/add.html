@@ -5,6 +5,9 @@
   <title>学IT - 后台管理系统</title>
   <?php  include "/views/public/css.html"?>
   <link rel="stylesheet" href="/views/assets/bootstrap-datepicker/css/bootstrap-datepicker3.css">
+  <style>
+
+  </style>
 </head>
 <body>
 
@@ -36,15 +39,17 @@
       <div class="form-group">
         <label for="" class="col-xs-3 control-label">姓名</label>
         <div class="col-xs-4">
-          <input type="text" name='tc_name' value='{{tc_name}}' class="form-control input-sm" placeholder="讲师名称">
+          <input type="text" name='tc_name' value='{{tc_name}}' class="form-control input-sm" data-required data-trim data-description="name" data-describedby="tc_name-msg"placeholder="讲师名称">
         </div>
+        <label id='tc_name-msg'></label>
       </div>
       {{if !tc_id}}
-      <div class="form-group">
+      <div class="form-group ">
         <label for="" class="col-xs-3 control-label">密码</label>
         <div class="col-xs-4">
-          <input type="password" name='tc_pass' class="form-control input-sm">
+          <input type="password" data-required data-trim data-pattern="^[a-z0-9]{6,18}$" data-description="pass" data-describedby="tc_pass-msg" name='tc_pass' class="form-control input-sm ">
         </div>
+        <label id='tc_pass-msg'></label>
       </div>
       {{/if}}
       <div class="form-group">

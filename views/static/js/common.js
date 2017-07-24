@@ -4,10 +4,10 @@ define(['jquery', 'template','nprogress', 'cookie'], function ($, template,NProg
     //如果不在登录页面才执行下面的这段代码
     NProgress.start();
     NProgress.done();
-    $('document').ajaxStart(function () {
+    $(document).ajaxStart(function () {
       NProgress.start();
     });
-    $('document').ajaxStop(function () {
+    $(document).ajaxStop(function () {
       NProgress.done();
     });
     if (location.pathname != '/dashboard/login') {
