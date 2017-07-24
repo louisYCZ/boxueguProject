@@ -1,7 +1,15 @@
-define(['jquery', 'template', 'cookie'], function ($, template) {
+define(['jquery', 'template','nprogress', 'cookie'], function ($, template,NProgress) {
   $(function () {
     //判断用户当前在哪个页面
     //如果不在登录页面才执行下面的这段代码
+    NProgress.start();
+    NProgress.done();
+    $('document').ajaxStart(function () {
+      NProgress.start();
+    });
+    $('document').ajaxStop(function () {
+      NProgress.done();
+    });
     if (location.pathname != '/dashboard/login') {
       //判断有没有登录 没有的话直接进入登入页面
       if (!$.cookie('PHPSESSID')) {

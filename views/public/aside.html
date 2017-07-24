@@ -85,7 +85,11 @@
 <script type="text/template" id='profile-tpl'>
   <!-- 头像 -->
   <div class="avatar img-circle">
+    {{if !tc_avatar}}
+    <img src="/views/static/images/302613.jpg" alt="">
+    {{else}}
     <img src="{{tc_avatar}}">
+    {{/if}}
   </div>
   <h4>{{tc_name}}</h4>
 </script>
