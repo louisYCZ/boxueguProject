@@ -51,7 +51,10 @@ define(['jquery', 'template','nprogress', 'cookie'], function ($, template,NProg
   var activeUl=activeLi.parent().parent();
   if(activeUl.siblings().length==1){
     activeUl.show();
-  }
+  };
+
+
+
 
 });
 

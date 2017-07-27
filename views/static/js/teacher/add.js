@@ -44,7 +44,6 @@ define(['jquery', 'template', 'utils','validate','datepicker' ,"datepickerCN",'f
           registeFormValidate();
         }
 
-      }
     })
   }
 
