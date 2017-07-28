@@ -29,7 +29,7 @@ define(['jquery', 'template', 'utils','validate','datepicker' ,"datepickerCN",'f
         tc_id: id,
       },
       success: function (data) {
-        if(data.code==200){
+        if (data.code == 200) {
           console.log(data);
           data.result.title = '讲师编辑';
           data.result.btnText = '保 存';
@@ -37,13 +37,13 @@ define(['jquery', 'template', 'utils','validate','datepicker' ,"datepickerCN",'f
           var html = template('teachertpl', data.result);
           $('.teacher.body').html(html);
           $('input[name=tc_join_date]').datepicker({
-            language:'zh-CN',
-            format:'yyyy-mm-dd'
+            language: 'zh-CN',
+            format: 'yyyy-mm-dd'
           })
 
           registeFormValidate();
         }
-
+      }
     })
   }
 
