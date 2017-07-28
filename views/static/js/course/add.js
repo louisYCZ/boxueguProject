@@ -4,7 +4,7 @@
 define(['jquery'], function ($) {
 
   $("#btn-create").click(function () {
-    alert(1)
+    //alert(1)
     //1. 获取到用户输入的课程名称
     var csName = $("[name=cs_name]").val();
     //2. 发送请求到接口，进行课程的创建
